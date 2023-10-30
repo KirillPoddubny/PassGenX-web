@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassGenX web</title>
+</head>
+<body>
+    <div class="main-div">
+
+        <p class="passgenx-desc">
+            PassGenX - программа для генерации надежного пароля. 
+            <br>Теперь использование программы стало еще удобней в браузере!
+        </p>
+
+        <p class="passgenx-button" onclick="PasswordGeneration(12)">
+            генерация надежного пароля (нажми)
+        </p>
+
+        <h4 class="download-btn" onclick="DownloadPage()">скачать PassGenX для windows</h4>
+        <div class="vertical-panel">
+            <h1 class="passgenx-title">PassGenX <spam class="passgenx-web">web</spam></h1>
+        </div>
+    </div>
+
+    <style>
+        .passgenx-title {
+            padding-left: 20px;
+            color:rgb(0, 0, 0);
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .passgenx-web {
+            color:rgb(181, 166, 0)
+        }
+
+        .passgenx-desc {
+            padding-left: 240px;
+            padding-top: 15px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+
+            border-radius: 15px;
+
+            width: 1000px;
+            height: 100px;
+            background-color: rgb(219, 219, 219)
+        }
+
+        .passgenx-desc2 {
+            padding-top: 15px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+
+            border-radius: 15px;
+            float: right;
+
+            padding-left: 10px;
+
+            width: 250px;
+            height: 100px;
+            background-color: #8fff6d
+        }
+
+        .passgenx-desc3 {
+            padding-left: 240px;
+            padding-top: 15px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+
+            border-radius: 15px;
+
+            width: 1000px;
+            height: 100px;
+            background-color: rgb(219, 219, 219)
+        }
+
+        .passgenx-button {
+            padding-top: 30px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+
+            border-radius: 15px;
+            float: right;
+            
+            padding-left: 40px;
+            padding-right: 10px;
+
+            cursor:pointer;
+
+            width: 520px;
+            height: 80px;
+            background-color: #8fff6d;
+            transition: background-color, 0.3s linear;
+        }
+
+        .download-btn {
+            position: absolute;
+            bottom: 0;
+            width: 99%;
+            text-align: center;
+            transition: color, 0.3 linear;
+            cursor:pointer;
+        }
+
+        .download-btn:hover {   
+            color:#0022ff
+        }
+
+        .passgenx-button:hover {
+            background-color: #5da348;
+        }
+
+        .vertical-panel {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #ffd000;
+        }
+
+    </style>
+
+    <script>
+        function PasswordGeneration(length) {
+            const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#__.';
+            let password = '';
+            
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset.charAt(randomIndex);
+            }
+            alert(password);
+        }
+
+        function DownloadPage() {
+            window.location.href = "./download";
+        }
+    </script>
+</body>
+</html>
